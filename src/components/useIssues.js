@@ -30,7 +30,7 @@ export default (label) => {
 const fetchData = (setLoading, setError, setResults, label) => {
   setLoading(true);
   fetch(
-    `https://api.github.com/repos/${process.env.REACT_APP_REPOSITORY}/issues?state=all&labels=issue status,${label}`
+    `https://api.github.com/repos/${process.env.REACT_APP_REPOSITORY}/issues?state=all&labels=issue status,${label}&per_page=100`
   )
     .then((response) => {
       return response.json();
